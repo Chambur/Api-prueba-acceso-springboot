@@ -8,20 +8,23 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PruebaAccesoApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(PruebaAccesoApplication.class, args);
 	}
 
-	public void exercice2 (){
+	public void exercice1 (){
 		for (int i = 1; i <= 100; i++) {
-			if (i % 3 == 0 && i % 5 == 0) {
-				System.out.println("VINCLE");
-			} else if (i % 3 == 0) {
-				System.out.println("VIN");
-			} else if (i % 5 == 0) {
-				System.out.println("CLE");
-			} else {
-				System.out.println(i);
+			String output = "";
+			if (i % 3 == 0) {
+				output += "VIN";
 			}
+			if (i % 5 == 0) {
+				output += "CLE";
+			}
+			if (output.isEmpty()) {
+				output = String.valueOf(i);
+			}
+			System.out.println(output);
 		}
 	}
 
